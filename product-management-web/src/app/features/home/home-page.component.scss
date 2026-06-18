@@ -1,0 +1,50 @@
+:host {
+  display: block;
+}
+
+.home {
+  min-height: calc(100vh - 64px);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 209, 0, 0.2), transparent 45%),
+    linear-gradient(130deg, #0f1218, #10192a);
+}
+
+.hero-card {
+  width: min(840px, 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 209, 0, 0.28);
+  background: rgba(7, 12, 20, 0.86);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  color: #f4f5f8;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+
+  h1 {
+    margin: 0.2rem 0 0.8rem;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+}
+
+.eyebrow {
+  margin: 0;
+  color: #ffd100;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.subtitle {
+  margin: 0;
+  color: #d5dae2;
+  line-height: 1.5;
+}
+
+.actions {
+  margin-top: 1.4rem;
+  display: flex;
+  gap: 0.8rem;
+}

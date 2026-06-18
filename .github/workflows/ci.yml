@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main, master ]
+  push:
+    branches: [ main, master ]
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore backend
+        run: dotnet restore ProductManagement.slnx --configfile NuGet.Config
+
+      - name: Build backend
+        run: dotnet build ProductManagement.slnx --no-restore -c Release
+
+      - name: Test backend
+        run: dotnet test ProductManagement.slnx --no-build -c Release
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: product-management-web
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: product-management-web/package-lock.json
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Lint/build frontend
+        run: npm run build
+
+      - name: Test frontend
+        run: npm test -- --runInBand

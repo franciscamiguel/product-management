@@ -1,0 +1,59 @@
+# -----------------------------
+# OS / Editor
+# -----------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# -----------------------------
+# .NET / API / Tests
+# -----------------------------
+**/bin/
+**/obj/
+TestResults/
+*.trx
+*.nupkg
+*.snupkg
+artifacts/
+
+# EF / local DB leftovers
+*.db
+*.db-shm
+*.db-wal
+
+# Logs
+*.log
+logs/
+
+# -----------------------------
+# Angular / Node (web)
+# -----------------------------
+**/node_modules/
+**/dist/
+**/.angular/
+**/.angular/cache/
+**/coverage/
+**/.sass-cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# -----------------------------
+# Env / secrets
+# -----------------------------
+.env
+.env.*
+!.env.example
+
+# -----------------------------
+# Docker / misc
+# -----------------------------
+*.pid
+*.seed

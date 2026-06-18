@@ -1,0 +1,12 @@
+<header class="topbar">
+	<div class="brand">Product Management</div>
+
+	<nav class="menu">
+		<a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Início</a>
+		<a routerLink="/produtos" routerLinkActive="active">Listagem</a>
+	</nav>
+</header>
+
+<main class="page-content">
+	<router-outlet></router-outlet>
+</main>

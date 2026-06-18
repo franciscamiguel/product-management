@@ -1,0 +1,48 @@
+:host {
+	display: block;
+	min-height: 100vh;
+	background: #0b1018;
+}
+
+.topbar {
+	height: 64px;
+	padding: 0 1rem;
+	border-bottom: 1px solid rgba(255, 209, 0, 0.2);
+	background: rgba(8, 12, 20, 0.95);
+	backdrop-filter: blur(4px);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: sticky;
+	top: 0;
+	z-index: 50;
+}
+
+.brand {
+	color: #ffd100;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.menu {
+	display: flex;
+	gap: 1rem;
+
+	a {
+		text-decoration: none;
+		color: #d9dde4;
+		font-weight: 600;
+		padding: 0.25rem 0.4rem;
+		border-radius: 6px;
+	}
+
+	a.active {
+		color: #0b1018;
+		background: #ffd100;
+	}
+}
+
+.page-content {
+	min-height: calc(100vh - 64px);
+}

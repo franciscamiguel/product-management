@@ -1,0 +1,26 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ProductManagement.Api/Dockerfile
+    container_name: pm-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ConnectionStrings__DefaultConnection: "Data Source=/app/data/product-management.db"
+    ports:
+      - "8080:8080"
+    volumes:
+      - api_data:/app/data
+
+  web:
+    build:
+      context: ./product-management-web
+      dockerfile: Dockerfile
+    container_name: pm-web
+    depends_on:
+      - api
+    ports:
+      - "4200:80"
+
+volumes:
+  api_data:
