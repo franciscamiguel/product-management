@@ -2,7 +2,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: ProductManagement.Api/Dockerfile
+      dockerfile: Dockerfile
     container_name: pm-api
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
